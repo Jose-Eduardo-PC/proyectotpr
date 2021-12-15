@@ -19,6 +19,9 @@
                     <x-jet-nav-link href="{{ route('proveedor.index') }}" :active="request()->routeIs('proveedor.*')">
                         {{ __('proveedor') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('rol.index') }}" :active="request()->routeIs('Rol.*')">
+                        {{ __('Rol') }}
+                    </x-jet-nav-link>
 
                 </div>
             </div>

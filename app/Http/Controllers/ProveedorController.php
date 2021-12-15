@@ -10,8 +10,8 @@ class ProveedorController extends Controller
     //
     public function index()
     {
-        $proveedor = Proveedor::paginate();
-        return view('proveedor.index', compact('proveedor'));
+       $datos['proveedor']=Proveedor::paginate(5);
+        return view('proveedor.index',$datos );
         
     }
   /// creaar usuario
@@ -21,28 +21,26 @@ class ProveedorController extends Controller
     }
     public function store(Request $request)
     {
-            $validatedData = $request->validate([
-                'nombre'=>'required',
-                'apellido'=>'required',
-                'email'=>'required',
-                'celular'=>'required',
-                'direccion'=>'required',
-                'estado'=>'required'
-              
-                ]);
-            $proveedor = new Proveedor(); 
-            $proveedor->nombre = $request->input('nombre');
-            $proveedor->apellido = $request->input('apellido');
-            $proveedor->email = $request->input('email');
-            $proveedor->celular = $request->input('celular');
-            $proveedor->Direccion= $request->input('direccion');
-            $proveedor->estado = $request->input('estado');
 
-            $proveedor->save();
+      // $datosProveedor = request()->all();
+       $datosProveedor = request()->except('_token');
+
+
+       Proveedor::insert($datosProveedor);
+
+       return redirect('proveedor');
+ 
+
+
+
+       // return response()->json($datosProveedor);
+
             
             $proveedor= Proveedor::All();
             return view('proveedor.index', compact('proveedor')); 
     }
+
+
     public function show($id)
     {
         $proveedor= Proveedor::find($id);
@@ -50,12 +48,43 @@ class ProveedorController extends Controller
     }
 
 
+    public function update(Request $request, $id){   // recibe el id 
+
+   
+      $datosProveedor = request()->except(['_token','_method']);
+      Proveedor::where('id','=',$id)->update($datosProveedor);          // busca la informacion con el id si encuentra hace la actualizacion 
+
+      $proveedor=Proveedor::findOrFail($id);
+      return view('proveedor.edit', compact('proveedor') );
+     
+   
+
+
+
+
+      
+  }
+
 
             
           
+  public function edit($id){   // recibe el id
 
 
+    $proveedor=Proveedor::findOrFail($id);  // 
 
+    return view('proveedor.edit', compact('proveedor') );
+
+
+}
+
+public function destroy($id){
+
+  proveedor::destroy($id);//aqui elimina el id
+  return redirect('proveedor'); //redirecciona a empleado
+
+
+}
 
 
 
