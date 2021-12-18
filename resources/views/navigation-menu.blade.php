@@ -16,12 +16,35 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('proveedor.index') }}" :active="request()->routeIs('proveedor.*')">
-                        {{ __('proveedor') }}
+                    <x-jet-nav-link href="{{ route('tema.index') }}" :active="request()->routeIs('tema.*')">
+                        {{ __('tema') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('rol.index') }}" :active="request()->routeIs('Rol.*')">
-                        {{ __('Rol') }}
+               
+
+                    <x-jet-nav-link href="{{ route('materia.index') }}" :active="request()->routeIs('materia.*')">
+                        {{ __('materia') }}
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('estudiante.index') }}" :active="request()->routeIs('estudiante.*')">
+                        {{ __('estudiante') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('profesor.index') }}" :active="request()->routeIs('profesor.*')">
+                        {{ __('profesor') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('actividades.index') }}" :active="request()->routeIs('actividades.*')">
+                        {{ __('actividades') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('evaluaciones.index') }}" :active="request()->routeIs('evaluaciones.*')">
+                        {{ __('evaluaciones') }}
+                    </x-jet-nav-link>
+                    
+                    <x-jet-nav-link href="{{ route('pregunta.index') }}" :active="request()->routeIs('pregunta.*')">
+                        {{ __('pregunta') }}
+                    </x-jet-nav-link>
+
 
                 </div>
             </div>

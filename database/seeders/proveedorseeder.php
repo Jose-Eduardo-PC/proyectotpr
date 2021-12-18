@@ -15,11 +15,11 @@ class proveedorseeder extends Seeder
     {
         DB::table('proveedors')->insert([
             [
-                'nombre'=>'aldahir',
-                'apellido'=>'cisneros',
-                'email'=>'arcacisnero@gmail.com',
-                'celular'=>61668120,
-                'Direccion'=>'avenida san martin ',
+                'nombre'=>'robin',
+                'apellido'=>'gonzalescaucota',
+                'email'=>'gonzalescaucota@gmail.com',
+                'celular'=>76814820,
+                'Direccion'=>'calle comercio',
                 'estado' =>'1'
             ]
             ]);

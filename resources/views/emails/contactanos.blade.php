@@ -8,8 +8,8 @@
 </head>
 <body>
     
-<h1>correo electronica</h1>
-<p>Este es el primer correo que mandare por laravel</p>
+<h1>correo electronico</h1>
+<p>Este es el primer correo que mandare por laravel con mailtrap</p>
 
 
 
